@@ -60,7 +60,7 @@ class ArticleController
         
         
         return new Response(sprintf(
-            '<html><body>AVE!NEWS!OLA!</body></html>',
+            'AVE!NEWS!OLA! %s',
             $slug
             ));
     }
