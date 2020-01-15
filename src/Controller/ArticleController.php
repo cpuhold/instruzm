@@ -15,7 +15,7 @@ class ArticleController
      */
     public function tirage()
     {
-       
+        // manque la balise d entree {}
 //       for($i=1; i <=6; $i++){
 //      '$number'.$i = random_int(0,1);
 //
