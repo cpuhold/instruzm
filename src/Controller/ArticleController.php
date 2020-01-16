@@ -4,8 +4,9 @@ namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class ArticleController
+class ArticleController extends AbstractController
 {
 
 // YI KING SHIT
@@ -51,18 +52,33 @@ class ArticleController
     }
 //SLUG TEST        
          
-    /**
-    * @Route("/news/{slug}")
-    */
+//     /**
+//     * @Route("/news/{slug}")
+//     */
 
+//     public function show($slug)
+//     {
+        
+        
+//         return new Response(sprintf(
+//             'AVE!NEWS!OLA! %s',
+//             $slug
+//             ));
+//     }
+
+//SLUG TEST
+
+    /**
+    * @Route("/demotwig/{slug}")
+    */
+    
     public function show($slug)
     {
         
         
-        return new Response(sprintf(
-            'AVE!NEWS!OLA! %s',
-            $slug
-            ));
+        return $this->render('article/show.html.twig', [
+            'title' => ucwords(str_replace('-', ' ', $slug)),
+        ]);
     }
 }
 
