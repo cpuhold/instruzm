@@ -66,7 +66,7 @@ class ArticleController extends AbstractController
 //             ));
 //     }
 
-//SLUG TEST
+//TWIG TESTS
 
     /**
     * @Route("/demotwig/{slug}")
@@ -74,10 +74,16 @@ class ArticleController extends AbstractController
     
     public function show($slug)
     {
-        
+
+        $comments=[
+            'Je commente pour de faux',
+            'La faux te commentera',
+            'Ou est l\'inquisiteur?',
+        ];
         
         return $this->render('article/show.html.twig', [
             'title' => ucwords(str_replace('-', ' ', $slug)),
+            'comments' => $comments,
         ]);
     }
 }
